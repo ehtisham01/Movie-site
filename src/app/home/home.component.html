@@ -1,0 +1,72 @@
+<app-header></app-header>
+
+<div class="home-container">
+  <div class="all-movies">
+    <div class="trending-movies">
+      <div class="top">
+        <h4>Trending Movies</h4>
+        <div class="view-all">Video</div>
+      </div>
+      <div class="movies-thumbnail">
+        <div class="movie" *ngFor="let item of trendingMovies">
+          <div class="cover" (click)="openMovie('trending', item.id)">
+            <img [src]="item.cover" />
+          </div>
+          <div class="detail">
+            <div class="name">{{ item.name }}</div>
+            <div class="rating">
+              <span class="rating-value">{{ item.rating }}</span>
+              <app-star-rating
+                [rating]="item.rating"
+                [isReadOnly]="true"
+              ></app-star-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="theatre-movies">
+      <div class="top">
+        <h4>Popular movies</h4>
+        <div class="view-all">Video</div>
+      </div>
+      <div class="movies-thumbnail">
+        <div class="movie" *ngFor="let item of popularMovies">
+          <div class="cover" (click)="openMovie('popular', item.id)">
+            <img [src]="item.cover" />
+          </div>
+          <div class="detail">
+            <div class="name">{{ item.name }}</div>
+            <div class="rating">
+              <span class="rating-value">{{ item.rating }}</span>
+              <app-star-rating
+                [rating]="item.rating"
+                [isReadOnly]="true"
+              ></app-star-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popular-movies">
+    <div class="top">
+      <h4>ALL Time Popular movies</h4>
+    </div>
+    <div class="movies-thumbnail">
+      <div class="movie" *ngFor="let item of theatreMovies">
+        <div class="detail">
+          <div class="name">{{ item.name }}</div>
+          <div class="rating">
+            <span class="rating-value">{{ item.rating }}</span>
+            <app-star-rating
+              [rating]="item.rating"
+              [isReadOnly]="true"
+            ></app-star-rating>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

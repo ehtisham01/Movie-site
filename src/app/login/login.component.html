@@ -1,0 +1,38 @@
+<div class="login-container">
+  <img class="film" src="assets/images/film.png" />
+  <div class="logo">Chillax</div>
+  <div class="desc">
+    Discover the freedom of effortless relocation with our free-moving site. We
+    offer a comprehensive platform designed to simplify every aspect of your
+    move, from planning and logistics to finding the perfect destination. With
+    user-friendly tools and resources at your fingertips, you can explore
+    endless possibilities, compare moving options, and connect with trusted
+    professionals—all without the hassle of traditional relocation stress.
+  </div>
+  <div class="login-form">
+    <div class="form-group">
+      <label for="userName">Email</label>
+      <input
+        type="text"
+        name="userName"
+        class="form-control"
+        [(ngModel)]="email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="passWord">Password</label>
+      <input
+        type="text"
+        name="passWord"
+        class="form-control"
+        [(ngModel)]="password"
+      />
+    </div>
+
+    <div class="btn-container">
+      <div class="error">{{ error }}</div>
+      <div class="btn btn-dark" (click)="login()">Login</div>
+      <div class="btn btn-dark ms-4">SignUp</div>
+    </div>
+  </div>
+</div>
